@@ -1,0 +1,39 @@
+.header-container, .left-content, .right-content, .shortlist, .contact-us {
+    display: flex;
+}
+
+.header-container {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-clr);
+    color: var(--white-font);
+    height: 60px;
+}
+
+.left-content {
+    width: 130px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.right-content {
+    justify-content: space-between;
+    width: 240px;
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.shortlist {
+    width: 85px;
+    justify-content: space-between;
+}
+
+.contact-us {
+    width: 110px;
+    justify-content: space-between;
+}
+
+.house {
+    font-size: 40px;
+}
