@@ -1,0 +1,26 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    height: 97px;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.footer-left-content {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding-left: 40px;
+}
+
+.footer-right-content {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    padding-right: 40px;
+}
+
+.copyright {
+    display: flex;
+}
