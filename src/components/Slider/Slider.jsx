@@ -7,18 +7,13 @@ const banner = {
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  height: '50vh',
+  height: '300px',
   width: '100%',
-  position: 'relative',
-  filter: 'grayscale(50%)',
-  zIndex: '-1',
-  filter: 'blur(3px)'
 }
 
 function Slider() {
   return (
-    <div className='slider-container'>
-      <div style={banner}></div>
+    <div style={banner}>
       <div className='slider-font'>
         <h1>Find student homes with bills included</h1>
         <p>A simple and faster way to search for student accommodation</p>

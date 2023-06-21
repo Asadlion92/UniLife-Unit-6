@@ -1,3 +1,41 @@
 .homepage-container {
     min-height: 100vh;
 }
+
+.homepage-container h2 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.homepage-container button {
+    height: 48px;
+    width: 200px;
+    border-radius: 12px;
+    background-color: #3A5295;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.homepage-container button:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

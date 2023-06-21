@@ -1,13 +1,18 @@
-.slider-font {
+.card-item-container {
+    padding: 20px;
+}
+
+.card-font {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
     background-color: rgba(0, 0, 0, 0.4);
+    width: 400px;
     height: 300px;
-    width: 100%;
+    border-radius: 24px;
     backdrop-filter: blur(2px);
     /*created a background color the same size as the image and overtop and blurred it*/
-    color: white;
 }
