@@ -3,6 +3,7 @@ import './Homepage.css'
 import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
 import HomeForm from '../../components/HomeForm/HomeForm'
+import MidBanner from '../../components/MidBanner/MidBanner'
 
 function Homepage() {
 
@@ -33,6 +34,7 @@ function Homepage() {
       <div className='btn-container'>
         <button>See All Cities</button>
       </div>
+      <MidBanner />
 
 
     </div>

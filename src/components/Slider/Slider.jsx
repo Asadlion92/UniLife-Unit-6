@@ -1,9 +1,9 @@
 import React from 'react'
 import './Slider.css'
-import overlay from '../../assets/cover-img.png'
+import cover from '../../assets/cover-img.png'
 
 const banner = {
-  backgroundImage: `url(${overlay})`,
+  backgroundImage: `url(${cover})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
