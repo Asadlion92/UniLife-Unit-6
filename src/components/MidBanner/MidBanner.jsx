@@ -52,7 +52,6 @@ function MidBanner() {
             </div>
             <div className="mid-banner-right-content">
                 <img src={person} />
-                {/* <p>RIGHT SIDE</p> */}
             </div>
         </div>
     </div>

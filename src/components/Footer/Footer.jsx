@@ -36,12 +36,12 @@ function Footer() {
       </div>
 
       <div className='footer-bottom'>
-        <div className="footer-left-content">
+        <div className="footer-bottom-left-content">
             <p>About Us</p>
             <p>Terms & Conditions</p>
             <p>Privacy & Cookie Policies</p>
         </div>
-        <div className="footer-right-content">
+        <div className="footer-bottom-right-content">
             <p>2023</p>
             <div className='copyright'>
               <RiCopyrightLine />
