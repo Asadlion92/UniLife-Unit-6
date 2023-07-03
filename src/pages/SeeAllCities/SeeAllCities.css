@@ -1,0 +1,31 @@
+.see-all-cities-container {
+    min-height: 100vh;
+}
+
+.see-all-cities-container h2 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.city-btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.city-btn {
+    width: 300px;
+    height: 88px;
+    border: 1px solid #CED3D8;
+    border-radius: 24px;
+    background-color: white;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.city-btn:hover {
+    background-color: var(--btn-clr);
+    color: var(--white-font);
+}

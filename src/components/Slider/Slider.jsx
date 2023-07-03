@@ -11,12 +11,12 @@ const banner = {
   width: '100%',
 }
 
-function Slider() {
+function Slider({title, subtitle}) {
   return (
     <div style={banner}>
       <div className='slider-font'>
-        <h1>Find student homes with bills included</h1>
-        <p>A simple and faster way to search for student accommodation</p>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
       </div>
     </div>
   )

@@ -11,3 +11,13 @@
     /*created a background color the same size as the image and overtop and blurred it*/
     color: white;
 }
+
+.slider-font h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.slider-font p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
