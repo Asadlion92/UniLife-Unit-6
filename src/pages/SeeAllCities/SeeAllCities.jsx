@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import './SeeAllCities.css'
 import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
+import CityDetails from '../CityDetails/CityDetails'
+import { Link } from 'react-router-dom'
 
 
 function SeeAllCities() {
@@ -29,7 +31,10 @@ function SeeAllCities() {
         />
         <h2>Search by City</h2>
         <div className='city-btn-container'>
-        {cities.map((item, index)=><button className='city-btn' key={index}><h2>{item.name}</h2></button>)}
+        {cities.map((item, index)=>
+          <Link to={`cityDetails/${item._id}`} key={index}>
+            <button className='city-btn'><h2>{item.name}</h2></button>
+          </Link>)} 
         </div>
     </div>
   )

@@ -15,11 +15,11 @@ function Homepage() {
   useEffect(
     ()=>{
       console.log("form is working")
-      axios.get(`https://unilife-server.herokuapp.com/cities`)
+      axios.get(`https://unilife-server.herokuapp.com/cities?limit=9`)
       .then(res=>{
         console.log(res.data.response)
         //store results in state using setCities
-        setCities(res.data.response.slice(0,9)) //slice is used to get the top 9 cities from the list
+        setCities(res.data.response)
       })
       .catch(err => console.log(err))
     }, []
