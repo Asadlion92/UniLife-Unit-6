@@ -32,8 +32,6 @@
 }
 
 .contact-us {
-    /* width: 110px; */
-    /* justify-content: space-between; */
     display: flex;
     width: 110px;
     justify-content: space-around;
@@ -46,4 +44,64 @@
 
 .house {
     font-size: 40px;
+}
+
+.modal {
+    height: 480px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container input {
+    width: 300px;
+    height: 56px;
+    border-radius: 12px;
+}
+
+.form-container textarea {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid #CED3D8;
+    padding: 20px;
+}
+
+form ::placeholder {
+    color: #CED3D8;
+}
+
+form input {
+    padding-left: 20px;
+    border: 1px solid #CED3D8;
+}
+
+form h3 {
+    margin-top: 30px;
+}
+
+.moal-right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.moal-right-content input {
+    background-color: #3A5295;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 765px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .modal {
+        width: 300px;
+        height: auto;
+    }
 }

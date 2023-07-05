@@ -20,6 +20,7 @@ function Header() {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      borderRadius: '25px'
     },
   };
   
@@ -50,9 +51,25 @@ function Header() {
         >
           <div className='modal'>
             <div className='modal-content'>
-              <p>Testing</p>
-              <p>Testing</p>
-              <p>Testing</p>
+              <h1>Contact Us</h1>
+              <br />
+              <p>Feel free to contact us if you have any questions. Looking forward to hear from you.</p>
+              <br />
+              <form className='form-container'>
+                <div className='modal-left-content'>
+                  <label><h3>Name</h3></label><br />
+                  <input type='text' placeholder='Enter your name' required/><br />
+                  <label><h3>Email</h3></label><br />
+                  <input type='text' placeholder='Enter your email address' required/><br />
+                  <label><h3>Phone Number</h3></label><br />
+                  <input type='text' placeholder='Enter your phone number' required/><br />
+                </div>
+                <div className='moal-right-content'>
+                  <label><h3>Message</h3></label><br />
+                  <textarea placeholder='Enter your message' required></textarea><br />
+                  <input type='submit' />
+                </div>
+              </form>
             </div>
 
           </div>
