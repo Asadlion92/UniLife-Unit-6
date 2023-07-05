@@ -8,7 +8,7 @@ function CityDetails() {
     // WAS ABLE TO GET USE PARAMS TO WORK AND DISPLAY THE PRODUCT ID FOR EACH CITY
 
   return (
-    <div>
+    <div className='city-details-container'>
         CityDetails {productId}
     </div>
   )

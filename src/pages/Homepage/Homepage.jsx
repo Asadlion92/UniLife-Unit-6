@@ -36,7 +36,7 @@ function Homepage() {
         {cities.map((item, index)=><HomeForm key={index} city={item} />)}
       </div>
       <div className='btn-container'>
-        <Link to='/see-all-cities'><button>See All Cities</button></Link>
+        <Link to='/allCities'><button>See All Cities</button></Link>
       </div>
       <MidBanner />
 

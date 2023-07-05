@@ -14,8 +14,8 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/see-all-cities' element={<SeeAllCities />} />
-        <Route path='see-all-cities/cityDetails/:productId' element={<CityDetails />} />
+        <Route path='/allCities' element={<SeeAllCities />} />
+        <Route path='allCities/cityDetails/:productId' element={<CityDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>
