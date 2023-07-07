@@ -55,6 +55,17 @@
     align-items: center;
 }
 
+.mid-banner-left-content button {
+    height: 48px;
+    width: 200px;
+    border-radius: 12px;
+    background-color: #3A5295;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
 .mid-banner-right-content {
     width: 50%; /*THIS IS GOOD, DON'T CHANGE*/
     display: flex;

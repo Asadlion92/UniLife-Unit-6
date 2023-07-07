@@ -1,0 +1,52 @@
+.form-container form {
+    background-color: orange;
+    height: 128px;
+    width: 80vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+.form-container form select {
+    width: 550px;
+    height: 48px;
+    border-radius: 12px;
+    margin: 0 20px;
+    padding: 0 20px;
+}
+
+.form-container form select option {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    border-radius: 0;
+}
+
+.form-container form button {
+    height: 48px;
+    width: 200px;
+    border-radius: 12px;
+    background-color: #3A5295;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+@media (max-width: 920px) {
+    .form-container form {
+        flex-direction: column;
+    }
+
+    .form-container form select {
+        width: 200px;
+    }
+}

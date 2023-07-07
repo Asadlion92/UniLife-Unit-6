@@ -5,6 +5,7 @@ import axios from 'axios'
 import HomeForm from '../../components/HomeForm/HomeForm'
 import MidBanner from '../../components/MidBanner/MidBanner'
 import { Link } from 'react-router-dom'
+import FindHomes from '../../components/FindHomes/FindHomes'
 
 function Homepage() {
 
@@ -14,10 +15,10 @@ function Homepage() {
   //First, Create an API call to retrieve the top cities using axios
   useEffect(
     ()=>{
-      console.log("form is working")
+      // console.log("form is working")
       axios.get(`https://unilife-server.herokuapp.com/cities?limit=9`)
       .then(res=>{
-        console.log(res.data.response)
+        // console.log(res.data.response)
         //store results in state using setCities
         setCities(res.data.response)
       })
@@ -31,6 +32,9 @@ function Homepage() {
         title="Find student homes with bills included" 
         subtitle="A simple and faster way to search for student accommodation"
         />
+
+      <FindHomes />
+
       <h2>Student accommodations in our top cities</h2>
       <div className='card-container'>
         {cities.map((item, index)=><HomeForm key={index} city={item} />)}
