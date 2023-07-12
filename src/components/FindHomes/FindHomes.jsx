@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './FindHomes.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function FindHomes() {
 
@@ -11,8 +12,8 @@ function FindHomes() {
         ()=>{
         axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
         .then(res=>{
-            // console.log(res.data.response)
-            //store results in state using setCities
+            console.log(res.data.response)
+            //store results in state using setDropdown
             setDropdown(res.data.response)
         })
         .catch(err => console.log(err))
@@ -28,11 +29,11 @@ function FindHomes() {
     <div className='form-container'>
 
         <form>
-        <select onChange={handleSelectedCity}>
-            <option value="">Search by City</option>
-            {dropdown.map((item, index)=><option value={item.name} key={index}>{item.name}</option>)}
-        </select>
-        <button>Find Homes</button>
+          <select onChange={handleSelectedCity}>
+              <option value="">Search by City</option>
+              {dropdown.map((item, index)=><option value={item.name} key={index}>{item.name}</option>)}
+          </select>
+          <button>Find Homes</button>
         </form>
 
     </div>

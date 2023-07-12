@@ -4,6 +4,7 @@ import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
 import CityDetails from '../CityDetails/CityDetails'
 import { Link } from 'react-router-dom'
+import CityButtons from '../../components/CityButtons/CityButtons'
 
 
 function SeeAllCities() {
@@ -31,10 +32,9 @@ function SeeAllCities() {
         />
         <h2>Search by City</h2>
         <div className='city-btn-container'>
-        {cities.map((item, index)=>
-          <Link to={`cityDetails/${item._id}`} key={index}>
-            <button className='city-btn'><h2>{item.name}</h2></button>
-          </Link>)} 
+          {cities.map((item, index)=>
+            <CityButtons key={index} buttons={item} />
+          )} 
         </div>
     </div>
   )
