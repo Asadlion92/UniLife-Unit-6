@@ -55,7 +55,7 @@ function Header() {
               <br />
               <p>Feel free to contact us if you have any questions. Looking forward to hear from you.</p>
               <br />
-              <form className='form-container'>
+              <form className='modal-form-container'>
                 <div className='modal-left-content'>
                   <label><h3>Name</h3></label><br />
                   <input type='text' placeholder='Enter your name' required/><br />
@@ -64,7 +64,7 @@ function Header() {
                   <label><h3>Phone Number</h3></label><br />
                   <input type='text' placeholder='Enter your phone number' required/><br />
                 </div>
-                <div className='moal-right-content'>
+                <div className='modal-right-content'>
                   <label><h3>Message</h3></label><br />
                   <textarea placeholder='Enter your message' required></textarea><br />
                   <input type='submit' />
