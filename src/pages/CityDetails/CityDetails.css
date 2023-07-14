@@ -1,3 +1,19 @@
 .city-details-container {
     min-height: 100vh;
 }
+
+.property-container {
+    padding: 0 50px;
+}
+
+.property-container h1 {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.property-items-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}

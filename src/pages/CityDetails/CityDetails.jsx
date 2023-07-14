@@ -34,10 +34,12 @@ function CityDetails() {
             title="Search Accomodation" 
             subtitle="Whatever you're after, we can help you find the right student accommodation for you."
       />
-      <h1>{`${city.total} homes in ${city.city_name}`}</h1>
       <div className='property-container'>
-      
-        {card.map((item, index) =><PropertyCard key={index} property={item} />)}
+        <h1>{`${city.total} homes in ${city.city_name}`}</h1>
+        <div className='property-items-container'>
+          {card.map((item, index) =><PropertyCard key={index} property={item} />)}
+        </div>
+        
       </div>
       
     </div>

@@ -1,0 +1,19 @@
+.home-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-details-container a {
+    display: flex;
+    width: 120px;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.home-details-container a:hover {
+    color: red;
+}

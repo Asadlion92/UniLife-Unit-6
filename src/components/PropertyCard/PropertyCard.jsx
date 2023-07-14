@@ -11,26 +11,34 @@ function PropertyCard({property}) {
         <img src={property.images[0]} />
         <div className="property-card-mid-content">
             <div className="mid-content-left">
-                <h3>${property.rent}</h3>
+                <h2>${property.rent}</h2>
                 <p>including bills</p>
             </div>
             <div className="mid-content-right">
-                <MdOutlineBed />
-                <p>{property.bedroom_count}</p>
-                <MdBathtub />
-                <p>{property.bathroom_count}</p>
-            </div>
-            <div className="property-card-btm-content">
-                <div className="btm-content-divider">
-                    <p>{property.property_type}</p>
-                    <p>{property.furnished}</p>
+                <div className='bed'>
+                    <MdOutlineBed className='bed-icon' />
+                    <p>{property.bedroom_count}</p>
                 </div>
-
-                <address>{`${property.address.street}, ${property.address.city}, ${property.address.postcode}`}</address>
-                <FiMapPin />
+                <div className="bathroom">
+                    <MdBathtub className='bathroom-icon' />
+                    <p>{property.bathroom_count}</p>
+                </div>
             </div>
-            <HomeDetails />
         </div>
+        <div className="property-card-btm-content">
+            <div className="btm-content-divider">
+                <p>{property.property_type}</p>
+                <p>{property.furnished}</p>
+            </div>
+            <div className='location'>
+                <FiMapPin />
+                <address>{`${property.address.street}, ${property.address.city}, ${property.address.postcode}`}</address>
+            </div>
+            
+            
+        </div>
+        <HomeDetails />
+        
 
     </div>
   )
