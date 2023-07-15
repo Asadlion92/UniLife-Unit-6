@@ -17,3 +17,73 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.city-details-btm-content {
+    background-color: #F6FAFD;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    padding: 50px;
+    margin-bottom: 120px;
+}
+
+.city-details-btm-content-left {
+    width: 50%;
+    height: auto;
+}
+
+.city-details-btm-content-left h1 {
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+.city-details-btm-content-left p {
+    line-height: 1.6;
+    padding-right: 40px;
+    font-size: 24px;
+}
+
+.city-details-btm-content-right {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+.city-details-btm-content-right img {
+    width: 100%;
+    height: auto;
+}
+
+.city-details-btm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1450px) {
+
+    .city-details-btm-content {
+        flex-direction: column;
+    }
+
+    .city-details-btm-content-left {
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    .city-details-btm-content-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    
+    .property-items-container {
+        justify-content: center;
+    }
+
+}
