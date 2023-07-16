@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 import './SeeAllCities.css'
 import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
-import CityDetails from '../CityDetails/CityDetails'
-import { Link } from 'react-router-dom'
 import CityButtons from '../../components/CityButtons/CityButtons'
 
 
@@ -13,10 +11,9 @@ function SeeAllCities() {
 
     useEffect(
         ()=>{
-          console.log("form is working")
           axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
           .then(res=>{
-            console.log(res.data.response)
+            // console.log(res.data.response)
             //store results in state using setCities
             setCities(res.data.response)
           })

@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
 import SeeAllCities from './pages/SeeAllCities/SeeAllCities'
 import CityDetails from './pages/CityDetails/CityDetails'
+import HomeDetails from './pages/HomeDetails/HomeDetails'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/allCities' element={<SeeAllCities />} />
         <Route path='/cityDetails/:city_id' element={<CityDetails />} />
+        <Route path='/homeDetails/:property_id' element={<HomeDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>

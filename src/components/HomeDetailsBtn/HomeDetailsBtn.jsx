@@ -1,18 +1,17 @@
 import React from 'react'
-import './HomeDetails.css'
+import './HomeDetailsBtn.css'
 import { Link } from 'react-router-dom'
 import {BsHouseDoor} from 'react-icons/bs'
 
-function HomeDetails() {
+function HomeDetailsBtn({id}) {
   return (
-    <div className='home-details-container'>
-        <Link>
+    <div className='home-details-btn-container'>
+        <Link to={`/homeDetails/${id}`}>
           <BsHouseDoor />
           View Home 
         </Link>
-        
     </div>
   )
 }
 
-export default HomeDetails
+export default HomeDetailsBtn

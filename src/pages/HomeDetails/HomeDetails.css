@@ -1,0 +1,14 @@
+.home-details-container {
+    min-height: 100vh;
+}
+
+.home-details-top-section {
+    background-color: aquamarine;
+    height: 30vh;
+    width: 100%;
+}
+
+.home-details-container img {
+    width: 300px;
+    height: auto;
+}
