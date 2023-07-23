@@ -32,12 +32,12 @@ function PropertyCard({property}) {
             </div>
             <div className='location'>
                 <FiMapPin />
-                <address>{`${property?.address.street}, ${property?.address.city}, ${property?.address.postcode}`}</address>
+                <address>{`${property?.address?.street}, ${property?.address?.city}, ${property?.address?.postcode}`}</address>
             </div>
             
             
         </div>
-        <HomeDetailsBtn id={property._id}/>
+        <HomeDetailsBtn id={property?._id}/>
         
 
     </div>

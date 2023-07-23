@@ -1,0 +1,21 @@
+.home-details-img-container {
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-img img{
+    /* width: 590px; */
+    width: 50vw;
+    border-radius: 24px;
+}
+
+.sub-img img {
+    /* width: 140px; */
+    width: 12vw;
+    border-radius: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+}
