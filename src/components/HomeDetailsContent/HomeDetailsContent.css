@@ -1,0 +1,18 @@
+.home-details-content-container {
+    background-color: red;
+    height: 50vh;
+    width: 40vw;
+}
+
+.content-items {
+    display: flex;
+    align-items: center;
+}
+
+.bedroom-count-num {
+    font-size: 40px;
+}
+
+.bathroom-count-num {
+    font-size: 40px;
+}

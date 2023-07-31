@@ -3,6 +3,7 @@ import './HomeDetails.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import HomeDetailsImg from '../../components/HomeDetailsImg/HomeDetailsImg'
+import HomeDetailsContent from '../../components/HomeDetailsContent/HomeDetailsContent'
 
 function HomeDetails() {
 
@@ -29,7 +30,7 @@ function HomeDetails() {
         <div className="home-details-top-section">
             {/* {images.map((item, index)=><HomeDetailsImg key={index} test={item} />)} */}
             <HomeDetailsImg />
-            <div className="details-top-section-right-content"></div>
+            <HomeDetailsContent />
         </div>
         <div className="home-details-mid-section"></div>
         <div className="home-details-btm-section"></div>

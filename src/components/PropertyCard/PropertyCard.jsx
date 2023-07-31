@@ -1,7 +1,7 @@
 import React from 'react'
 import './PropertyCard.css'
 import {MdOutlineBed} from 'react-icons/md'
-import {MdBathtub} from 'react-icons/md'
+import {MdOutlineBathtub} from 'react-icons/md'
 import {FiMapPin} from 'react-icons/fi'
 import HomeDetailsBtn from '../HomeDetailsBtn/HomeDetailsBtn'
 
@@ -20,7 +20,7 @@ function PropertyCard({property}) {
                     <p>{property?.bedroom_count}</p>
                 </div>
                 <div className="bathroom">
-                    <MdBathtub className='bathroom-icon' />
+                    <MdOutlineBathtub className='bathroom-icon' />
                     <p>{property?.bathroom_count}</p>
                 </div>
             </div>

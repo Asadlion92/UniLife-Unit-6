@@ -17,7 +17,7 @@ function HomeDetailsImg() {
         ()=>{
             axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
             .then(res => {
-                console.log(res.data.images)
+                // console.log(res.data.images)
                 //store data in state
                 setImages(res.data.images)
 
