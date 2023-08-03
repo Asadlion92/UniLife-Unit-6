@@ -26,47 +26,76 @@ function HomeDetailsContent() {
 
   return (
     <div className='home-details-content-container'>
-        <h1>{`${address.street}, ${address.city}, ${address.postcode}`}</h1>
-        <div className="home-details-content-info">
-            <div className="home-details-content-info-top-row">
-                <div className="content">
-                    <h3>Bedrooms</h3>
-                    <div className="content-items">
-                        <MdOutlineBed className='bed-icon' /*className bed-icon is pulling from PropertyCard css */ />
-                        <div className="bedroom-count-num">
-                            {info.bedroom_count}
+        <div className="master-top-block">
+            <h1>{`${address.street}, ${address.city}, ${address.postcode}`}</h1>
+            <div className="home-details-column-container">
+                <div className="home-details-column">
+                    <div className="top-block">
+                        <h3>Bedrooms</h3>
+                        <div className="content-items">
+                            <MdOutlineBed className='bed-icon' /*className bed-icon is pulling from PropertyCard css */ />
+                            <div className="bedroom-count-num">
+                                {info.bedroom_count}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="content">
-                    <h3>Bathrooms</h3>
-                    <div className="content-items">
-                        <MdOutlineBathtub className='bathroom-icon' /*className bathroom-icon is pulling from PropertyCard css */ />
-                        <div className="bathroom-count-num">
-                            {info.bathroom_count}
-                        </div>
+                    <div className="btm-block">
+                            <h3>Price</h3>
+                            <div className="content-items">
+                                <div className="price-num">
+                                    <p>${info.rent}</p>
+                                </div>
+                            </div> 
                     </div>
                 </div>
-                <div className="content">
-                    <h3>Property Type</h3>
-                    <p>{info.property_type}</p>
+
+                <div className="home-details-column">
+                    <div className="top-block">
+                        <h3>Bathrooms</h3>
+                        <div className="content-items">
+                            <MdOutlineBathtub className='bathroom-icon' /*className bathroom-icon is pulling from PropertyCard css */ />
+                            <div className="bathroom-count-num">
+                                {info.bathroom_count}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="btm-block">
+                            <h3>Furnished Type</h3>
+                            <div className="content-items">
+                                <div>
+                                    <p>{info.furnished}</p>
+                                </div>
+                            </div> 
+                    </div>
                 </div>
-            </div>
-            <div className="home-details-content-info-bottom-row">
-                <div className="content">
-                    <h3>Price</h3>
-                    <p>${info.rent}</p>
-                </div>
-                <div className="content">
-                    <h3>Furnished type</h3>
-                    <p>{info.furnished}</p>
-                </div>
-                <div className="content">
-                    <h3>Available from</h3>
-                    <p>{info.availability}</p>
+
+                <div className="home-details-column">
+                    <div className="top-block">
+                        <h3>Property Type</h3>
+                        <div className="content-items">
+                            <div>
+                                <p>{info.property_type}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="btm-block">
+                            <h3>Available from</h3>
+                            <div className="content-items">
+                                <div>
+                                    <p>{info.availability}</p>
+                                </div>
+                            </div> 
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
     </div>
   )
 }
