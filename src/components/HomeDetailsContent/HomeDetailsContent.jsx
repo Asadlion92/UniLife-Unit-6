@@ -28,6 +28,7 @@ function HomeDetailsContent() {
     <div className='home-details-content-container'>
         <div className="master-top-block">
             <h1>{`${address.street}, ${address.city}, ${address.postcode}`}</h1>
+            <hr />
             <div className="home-details-column-container">
                 <div className="home-details-column">
                     <div className="top-block">
@@ -63,7 +64,7 @@ function HomeDetailsContent() {
                             <h3>Furnished Type</h3>
                             <div className="content-items">
                                 <div>
-                                    <p>{info.furnished}</p>
+                                    <p className='furnished-content'>{info.furnished}</p>
                                 </div>
                             </div> 
                     </div>
@@ -74,7 +75,7 @@ function HomeDetailsContent() {
                         <h3>Property Type</h3>
                         <div className="content-items">
                             <div>
-                                <p>{info.property_type}</p>
+                                <p className='property-type-content'>{info.property_type}</p>
                             </div>
                         </div>
                     </div>
@@ -82,19 +83,16 @@ function HomeDetailsContent() {
                             <h3>Available from</h3>
                             <div className="content-items">
                                 <div>
-                                    <p>{info.availability}</p>
+                                    <p className='availability-content'>{info.availability}</p>
                                 </div>
                             </div> 
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
+        <div className="master-btm-block">
+            <button>Book Viewing</button>
+        </div>
 
     </div>
   )

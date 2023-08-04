@@ -1,11 +1,14 @@
 .home-details-content-container {
-    background-color: red;
-    height: 50vh;
+    height: 90vh;
     width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .home-details-content-container h1 {
     text-align: center;
+    font-size: 36px;
 }
 
 .home-details-column-container {
@@ -15,8 +18,8 @@
 
 .home-details-column {
     width: 30%;
+    /* width: 160px; */
     height: 200px;
-    background-color: gray;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,7 +31,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: greenyellow;
     height: 70px;
 }
 
@@ -37,7 +39,7 @@
 }
 
 .top-block .content-items {
-    width: 60px;
+    width: 70px;
 }
 
 .btm-block {
@@ -45,7 +47,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: blueviolet;
     height: 70px;
 }
 
@@ -57,21 +58,77 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: antiquewhite;
+}
+
+.content-items .bed-icon {
+    color: #3A5295;
+}
+
+.content-items .bathroom-icon {
+    color: #3A5295;
 }
 
 .bedroom-count-num, .bathroom-count-num{
-    font-size: 30px;
+    font-size: 40px;
+    color: #3A5295;
+    font-weight: bolder;
 }
 
 .price-num {
-    font-size: 30px;
+    font-size: 40px;
+    color: #3A5295;
+    font-weight: bolder;
+}
+
+.furnished-content {
+    color: #3A5295;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.property-type-content {
+    color: #3A5295;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.availability-content {
+    color: #3A5295;
+    font-weight: bolder;
+    font-size: 24px;
 }
 
 .master-top-block {
-    background-color: gold;
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    border: 1px solid #CED3D8;
+    border-radius: 24px;
+}
+
+hr {
+    color: #CED3D8;
+}
+
+.master-btm-block {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.master-btm-block button {
+    height: 48px;
+    width: 298px;
+    border-radius: 12px;
+    border: none;
+    background-color: #3A5295;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.master-btm-block button:hover {
+    cursor: pointer;
+    color: red;
 }
