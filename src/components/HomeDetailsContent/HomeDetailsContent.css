@@ -1,9 +1,6 @@
 .home-details-content-container {
-    height: 90vh;
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 45%;
+    height: auto;
 }
 
 .home-details-content-container h1 {
@@ -18,7 +15,6 @@
 
 .home-details-column {
     width: 30%;
-    /* width: 160px; */
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -68,38 +64,20 @@
     color: #3A5295;
 }
 
-.bedroom-count-num, .bathroom-count-num{
-    font-size: 40px;
+.bedroom-count-num, .bathroom-count-num, .price-num {
+    font-size: 30px;
     color: #3A5295;
     font-weight: bolder;
 }
 
-.price-num {
-    font-size: 40px;
-    color: #3A5295;
-    font-weight: bolder;
-}
-
-.furnished-content {
+.furnished-content, .property-type-content, .availability-content {
     color: #3A5295;
     font-weight: bolder;
     font-size: 24px;
 }
 
-.property-type-content {
-    color: #3A5295;
-    font-weight: bolder;
-    font-size: 24px;
-}
-
-.availability-content {
-    color: #3A5295;
-    font-weight: bolder;
-    font-size: 24px;
-}
-
-.master-top-block {
-    height: 80%;
+.home-details-container-top-block {
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -111,13 +89,7 @@ hr {
     color: #CED3D8;
 }
 
-.master-btm-block {
-    height: 10%;
-    display: flex;
-    align-items: center;
-}
-
-.master-btm-block button {
+.home-details-content-container button {
     height: 48px;
     width: 298px;
     border-radius: 12px;
@@ -126,9 +98,38 @@ hr {
     color: white;
     font-size: 20px;
     font-weight: bolder;
+    margin-top: 40px;
 }
 
-.master-btm-block button:hover {
+.home-details-content-container button:hover {
     cursor: pointer;
     color: red;
+}
+
+@media (max-width: 1000px) {
+
+    .home-details-content-container {
+        width: 90%;
+    }
+
+    .home-details-container-top-block {
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+   .bedroom-count-num, .bathroom-count-num, .price-num {
+        font-size: 15px;
+    }
+
+    .furnished-content, .property-type-content, .availability-content {
+        font-size: 15px;
+    }
+
+    .home-details-content-container h1 {
+        font-size: 24px;
+    }
+
 }

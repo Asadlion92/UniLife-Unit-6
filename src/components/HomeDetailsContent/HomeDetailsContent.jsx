@@ -26,7 +26,7 @@ function HomeDetailsContent() {
 
   return (
     <div className='home-details-content-container'>
-        <div className="master-top-block">
+        <div className="home-details-container-top-block">
             <h1>{`${address.street}, ${address.city}, ${address.postcode}`}</h1>
             <hr />
             <div className="home-details-column-container">
@@ -90,9 +90,7 @@ function HomeDetailsContent() {
                 </div>
             </div>
         </div>
-        <div className="master-btm-block">
-            <button>Book Viewing</button>
-        </div>
+        <button>Book Viewing</button>
 
     </div>
   )

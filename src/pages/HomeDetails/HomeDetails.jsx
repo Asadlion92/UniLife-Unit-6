@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './HomeDetails.css'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import HomeDetailsImg from '../../components/HomeDetailsImg/HomeDetailsImg'
 import HomeDetailsContent from '../../components/HomeDetailsContent/HomeDetailsContent'
 
@@ -27,8 +27,9 @@ function HomeDetails() {
 
   return (
     <div className='home-details-container'>
+        <Link><h3>Back to Search</h3></Link>
+
         <div className="home-details-top-section">
-            {/* {images.map((item, index)=><HomeDetailsImg key={index} test={item} />)} */}
             <HomeDetailsImg />
             <HomeDetailsContent />
         </div>
