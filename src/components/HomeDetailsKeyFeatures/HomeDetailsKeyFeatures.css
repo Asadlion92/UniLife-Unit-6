@@ -1,0 +1,24 @@
+.home-details-key-features-container {
+    width: 50%;
+    background-color: burlywood;
+    padding: 0 40px;
+}
+
+.home-details-key-features-container h1 {
+    padding-bottom: 20px;
+    color: #3A5295;
+}
+
+.home-details-key-features-container li {
+    line-height: 2.0;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+.checkmark {
+    color: #3A5295;
+}
+

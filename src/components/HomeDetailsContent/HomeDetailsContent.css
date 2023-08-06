@@ -116,20 +116,33 @@ hr {
         margin-top: 40px;
     }
 
+    .home-details-container-btm-block {
+        text-align: center;
+    }
+
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
 
    .bedroom-count-num, .bathroom-count-num, .price-num {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .furnished-content, .property-type-content, .availability-content {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .home-details-content-container h1 {
         font-size: 24px;
+    }
+
+    .top-block h3, .btm-block h3 {
+        font-size: 12px;
+    }
+
+    .home-details-content-container button {
+        font-size: 12px;
+        width: 200px;
     }
 
 }

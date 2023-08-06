@@ -90,7 +90,10 @@ function HomeDetailsContent() {
                 </div>
             </div>
         </div>
-        <button>Book Viewing</button>
+        <div className='home-details-container-btm-block'>
+            <button>Book Viewing</button>
+        </div>
+        
 
     </div>
   )

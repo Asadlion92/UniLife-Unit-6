@@ -4,6 +4,8 @@ import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import HomeDetailsImg from '../../components/HomeDetailsImg/HomeDetailsImg'
 import HomeDetailsContent from '../../components/HomeDetailsContent/HomeDetailsContent'
+import HomeDetailsDescription from '../../components/HomeDetailsDescription/HomeDetailsDescription'
+import HomeDetailsKeyFeatures from '../../components/HomeDetailsKeyFeatures/HomeDetailsKeyFeatures'
 
 function HomeDetails() {
 
@@ -33,7 +35,10 @@ function HomeDetails() {
             <HomeDetailsImg />
             <HomeDetailsContent />
         </div>
-        <div className="home-details-mid-section"></div>
+        <div className="home-details-mid-section">
+            <HomeDetailsDescription />
+            <HomeDetailsKeyFeatures />
+        </div>
         <div className="home-details-btm-section"></div>
     </div>
   )
