@@ -1,15 +1,21 @@
 .home-details-description-container {
     padding: 0 40px;
-    background-color: orangered;
     width: 50%;
     height: auto;
 }
 
 .home-details-description-container h1 {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    padding: 40px 0;
     color: #3A5295;
 }
 
 .home-details-description-container p {
     line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+    .home-details-description-container {
+        width: 100%;
+    }
 }

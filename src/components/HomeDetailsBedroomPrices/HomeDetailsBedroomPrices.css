@@ -1,0 +1,50 @@
+.home-details-bedroom-prices-container {
+    padding: 40px 40px;
+    width: 50%;
+    height: auto;
+}
+
+.home-details-bedroom-prices-container h1 {
+    padding: 40px 0;
+    color: #3A5295;
+}
+
+.bedroom-prices {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #CED3D8;
+}
+
+.bedroom-prices-container :last-child {
+    border-bottom: none;
+}
+
+.bedroom-prices p {
+    font-size: 20px;
+}
+
+.bedroom-prices-container {
+    min-width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid #CED3D8;
+    border-radius: 24px;
+}
+
+@media (max-width: 1000px) {
+    .home-details-bedroom-prices-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .bedroom-prices p {
+        font-size: 16px;
+    }
+}

@@ -6,6 +6,7 @@ import HomeDetailsImg from '../../components/HomeDetailsImg/HomeDetailsImg'
 import HomeDetailsContent from '../../components/HomeDetailsContent/HomeDetailsContent'
 import HomeDetailsDescription from '../../components/HomeDetailsDescription/HomeDetailsDescription'
 import HomeDetailsKeyFeatures from '../../components/HomeDetailsKeyFeatures/HomeDetailsKeyFeatures'
+import HomeDetailsBedroomPrices from '../../components/HomeDetailsBedroomPrices/HomeDetailsBedroomPrices'
 
 function HomeDetails() {
 
@@ -39,7 +40,9 @@ function HomeDetails() {
             <HomeDetailsDescription />
             <HomeDetailsKeyFeatures />
         </div>
-        <div className="home-details-btm-section"></div>
+        <div className="home-details-btm-section">
+            <HomeDetailsBedroomPrices />
+        </div>
     </div>
   )
 }

@@ -22,4 +22,15 @@
         flex-direction: column;
     }
 
+    .home-details-mid-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-details-btm-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

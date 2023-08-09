@@ -1,11 +1,10 @@
 .home-details-key-features-container {
     width: 50%;
-    background-color: burlywood;
     padding: 0 40px;
 }
 
 .home-details-key-features-container h1 {
-    padding-bottom: 20px;
+    padding: 40px 0;
     color: #3A5295;
 }
 
@@ -22,3 +21,8 @@ ul {
     color: #3A5295;
 }
 
+@media (max-width: 1000px) {
+    .home-details-key-features-container {
+        width: 100%;
+    } 
+}
