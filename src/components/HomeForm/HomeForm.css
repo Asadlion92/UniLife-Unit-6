@@ -16,3 +16,13 @@
     backdrop-filter: blur(2px);
     /*created a background color the same size as the image and overtop and blurred it*/
 }
+
+.card-font a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card-font a:hover {
+    color: red;
+}
