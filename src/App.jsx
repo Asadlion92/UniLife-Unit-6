@@ -7,11 +7,13 @@ import Footer from './components/Footer/Footer'
 import SeeAllCities from './pages/SeeAllCities/SeeAllCities'
 import CityDetails from './pages/CityDetails/CityDetails'
 import HomeDetails from './pages/HomeDetails/HomeDetails'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
