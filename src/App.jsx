@@ -9,6 +9,10 @@ import CityDetails from './pages/CityDetails/CityDetails'
 import HomeDetails from './pages/HomeDetails/HomeDetails'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
+//Static route is for example: path='/allCities'
+//Dynamic route is for example: path='/cityDetails/:city_id'
+//The ":" is what makes it dynamic
+
 function App() {
 
   return (

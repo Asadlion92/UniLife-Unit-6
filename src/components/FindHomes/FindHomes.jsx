@@ -8,11 +8,13 @@ function FindHomes() {
     //Cities dropdown info for form
     const [dropdown, setDropdown] = useState([])
 
+    //Query Select
+    const [query, setQuery] = useState([])
+
     useEffect(
         ()=>{
         axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
         .then(res=>{
-            console.log(res.data.response)
             //store results in state using setDropdown
             setDropdown(res.data.response)
         })
@@ -22,18 +24,32 @@ function FindHomes() {
 
   //Function to handle selecting a city
   const handleSelectedCity = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
+
+    axios.get(`https://unilife-server.herokuapp.com/cities?limit=20`)
+    .then(res=>{
+      //Stored e.target.value into state
+      setQuery(e.target.value)
+    }).catch(err => console.log(err))
+
+  }
+
+  const handleSearch = (e) =>{
+    //This stops the defualt form action from refreshing page
+    e.preventDefault();
+    
   }
 
   return (
     <div className='form-container'>
 
-        <form>
+        <form onSubmit={handleSearch}>
           <select onChange={handleSelectedCity}>
               <option value="">Search by City</option>
-              {dropdown.map((item, index)=><option value={item.name} key={index}>{item.name}</option>)}
+              {dropdown.map((item, index)=><option value={item._id} key={index}>{item.name}</option>)}
+              {/*I have the ID from the drop down. I need to store it probably in a state and use the button to display it*/}
           </select>
-          <button>Find Homes</button>
+          <Link to={`/cityDetails/${query}`}><button>Find Homes</button></Link>
         </form>
 
     </div>
