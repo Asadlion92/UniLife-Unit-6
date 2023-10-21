@@ -1,0 +1,42 @@
+.filter-accomodations-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-accomodations-container form {
+    height: 150px;
+    width: 80vw;
+    /* border: none; */
+    border: 1px solid black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 10px 10px 20px lightgray;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 210px;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+select {
+    font-size: 16px;
+    border-radius: 12px;
+    height: 36px;
+}

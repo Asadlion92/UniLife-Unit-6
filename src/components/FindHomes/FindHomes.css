@@ -1,19 +1,19 @@
 .form-container form {
-    background-color: orange;
     height: 128px;
     width: 80vw;
-    border: 1px solid black;
-    border-radius: 10px;
+    border: none;
+    border-radius: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: transparent;
+    box-shadow: 10px 10px 20px lightgray;
 }
 
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
 }
 
 .form-container form select {

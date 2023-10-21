@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import PropertyCard from '../../components/PropertyCard/PropertyCard'
 import students from '../../assets/students-icon.png'
+import FilterAccomodations from '../../components/FilterAccomodations/FilterAccomodations'
 
 function CityDetails() {
 
@@ -35,6 +36,9 @@ function CityDetails() {
             title="Search Accomodation" 
             subtitle="Whatever you're after, we can help you find the right student accommodation for you."
       />
+
+      {/* <FilterAccomodations properties={city} setProperties={setCity} cityId={city_id} /> */}
+
       <div className='property-container'>
         <h1>{`${city.total} homes in ${city.city_name}`}</h1>
         <div className='property-items-container'>

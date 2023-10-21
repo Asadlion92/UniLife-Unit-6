@@ -30,7 +30,7 @@ function HomeDetails() {
 
   return (
     <div className='home-details-container'>
-        <Link><h3>Back to Search</h3></Link>
+        {/* <Link><h3>Back to Search</h3></Link> */}
 
         <div className="home-details-top-section">
             <HomeDetailsImg />

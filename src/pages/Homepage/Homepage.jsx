@@ -28,12 +28,15 @@ function Homepage() {
 
   return (
     <div className='homepage-container'>
-      <Slider
-        title="Find student homes with bills included" 
-        subtitle="A simple and faster way to search for student accommodation"
-        />
+      <div className='grid'>
+        <Slider className='slider'
+          title="Find student homes with bills included" 
+          subtitle="A simple and faster way to search for student accommodation"
+          />
 
-      <FindHomes />
+        <FindHomes />
+      </div>
+
 
       <h2>Student accommodations in our top cities</h2>
       <div className='card-container'>
