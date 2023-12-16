@@ -40,7 +40,7 @@ function Homepage() {
 
       <h2>Student accommodations in our top cities</h2>
       <div className='card-container'>
-        {cities.map((item, index)=><HomeForm key={index} city={item} />)}
+        {cities?.map((item, index)=><HomeForm key={index} city={item} />)}
       </div>
       <div className='btn-container'>
         <Link to='/allCities'><button>See All Cities</button></Link>

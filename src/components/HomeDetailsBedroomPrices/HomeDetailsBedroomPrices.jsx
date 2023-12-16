@@ -12,7 +12,7 @@ function HomeDetailsBedroomPrices() {
         ()=>{
             axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
             .then(res => {
-                console.log(res.data.bedroom_prices)
+                // console.log(res.data.bedroom_prices)
                 setBedroomPrices(res.data.bedroom_prices)
 
             })

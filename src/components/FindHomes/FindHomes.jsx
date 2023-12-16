@@ -46,7 +46,7 @@ function FindHomes() {
         <form onSubmit={handleSearch}>
           <select onChange={handleSelectedCity}>
               <option value="">Search by City</option>
-              {dropdown.map((item, index)=><option value={item._id} key={index}>{item.name}</option>)}
+              {dropdown?.map((item, index)=><option value={item._id} key={index}>{item.name}</option>)}
               {/*I have the ID from the drop down. I need to store it probably in a state and use the button to display it*/}
           </select>
           <Link to={`/cityDetails/${query}`}><button>Find Homes</button></Link>
