@@ -13,11 +13,23 @@ function CityDetails() {
     const [city, setCity] = useState([])
     const [card, setCard] = useState([])
 
+    const [bedroomCount, setBedroomCount] = useState([])
+    const [bathroomCount, setBathroomCount] = useState([])
+    const [maxPrice, setMaxPrice] = useState([])
+    const [homeType, setHomeType] = useState([])
+
     useEffect(
       ()=>{
         axios.get(`https://unilife-server.herokuapp.com/properties/city/${city_id}`)
         .then(res => {
 
+          setBedroomCount(res.data.response)
+          setBathroomCount(res.data.response)
+          
+          setHomeType(res.data.response) 
+          // console.log(res.data.response[0].bedroom_prices)
+
+          
           //store results in state using setCity
           setCity(res.data)
 
@@ -35,6 +47,40 @@ function CityDetails() {
             title="Search Accomodation" 
             subtitle="Whatever you're after, we can help you find the right student accommodation for you."
       />
+
+      <div className='filter-box'>
+        <form className='filter-container'>
+          <div className='filter-column'>
+            <label>Min Bedroom</label>
+            <select>
+              {bedroomCount.sort((a,b) => a.bedroom_count > b.bedroom_count ? 1 : -1)//used sort to place data in order
+              .map((item, index) => <option key={index}>{item.bedroom_count}</option>)}
+            </select>
+          </div>
+
+          <div className='filter-column'>
+            <label>Min Bathroom</label>
+            <select>
+              {bathroomCount.map((item, index) => <option key={index}>{item.bathroom_count}</option>)}
+            </select>
+          </div>
+
+          <div className='filter-column'>
+            <label>Max Price</label>
+            <select>
+              <option value="">Testing 1</option>
+            </select>
+          </div>
+
+          <div className='filter-column'>
+            <label>Home Type</label>
+            <select>
+              {homeType.map((item, index) => <option key={index}>{item.property_type}</option>)}
+            </select>
+          </div>
+    
+        </form>
+      </div>
 
       <div className='property-container'>
         <h1>{`${city?.total} homes in ${city?.city_name}`}</h1>
