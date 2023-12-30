@@ -6,6 +6,7 @@ import axios from 'axios'
 import PropertyCard from '../../components/PropertyCard/PropertyCard'
 import students from '../../assets/students-icon.png'
 
+//NOTES from 12/30/23: I need to figure out now how to filter the PropertyCard when the user selects the bedroom count dropdown
 
 function CityDetails() {
 
@@ -13,27 +14,41 @@ function CityDetails() {
     const [city, setCity] = useState([])
     const [card, setCard] = useState([])
 
-    const [bedroomCount, setBedroomCount] = useState([])
-    const [bathroomCount, setBathroomCount] = useState([])
-    const [maxPrice, setMaxPrice] = useState([])
-    const [homeType, setHomeType] = useState([])
+    const [bedroomCount, setBedroomCount] = useState('1')
+
+    //Steps for getting the POST Request to work
+    //1. First I created the serverUrl for the backend
+    const serverUrl = "https://unilife-server.herokuapp.com/properties/filter"  
+
+    //2. I created the query object 
+    const query={
+      city_id: city_id,
+      bedroom_count: bedroomCount
+  }
+
+    const handleBedroomFilter = (e) => {
+      console.log(e.target.value)
+      setBedroomCount(e.target.value)
+      //3. I created the axios.post request with the serverUrl below and the query object. It appears that when the onChange event is triggered when I select the dropdown, the data appears to be the same but it is placed in a different order than what's posted on the page. Nonetheless, all the data is there.
+      axios.post(`${serverUrl}`,
+      {query})
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => console.log(err))
+    }
+
 
     useEffect(
       ()=>{
         axios.get(`https://unilife-server.herokuapp.com/properties/city/${city_id}`)
         .then(res => {
-
-          setBedroomCount(res.data.response)
-          setBathroomCount(res.data.response)
-          
-          setHomeType(res.data.response) 
-          // console.log(res.data.response[0].bedroom_prices)
-
-          
+        
           //store results in state using setCity
           setCity(res.data)
 
           setCard(res.data.response)
+          // console.log(res.data.response)
         })
         .catch(err => console.log(err))
       }, []
@@ -48,38 +63,39 @@ function CityDetails() {
             subtitle="Whatever you're after, we can help you find the right student accommodation for you."
       />
 
-      <div className='filter-box'>
-        <form className='filter-container'>
+      <div className='filter-container'>
+        <div className='filter-dropdown'>
           <div className='filter-column'>
-            <label>Min Bedroom</label>
-            <select>
-              {bedroomCount.sort((a,b) => a.bedroom_count > b.bedroom_count ? 1 : -1)//used sort to place data in order
-              .map((item, index) => <option key={index}>{item.bedroom_count}</option>)}
+            <label htmlFor="">Min Bedroom</label>
+            <select onChange={handleBedroomFilter}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
             </select>
           </div>
-
           <div className='filter-column'>
-            <label>Min Bathroom</label>
-            <select>
-              {bathroomCount.map((item, index) => <option key={index}>{item.bathroom_count}</option>)}
+            <label htmlFor="">Min Bathroom</label>
+            <select name="" id="">
+              <option value="">TEST</option>
             </select>
           </div>
-
           <div className='filter-column'>
-            <label>Max Price</label>
-            <select>
-              <option value="">Testing 1</option>
+            <label htmlFor="">Max Price</label>
+            <select name="" id="">
+              <option value="">TEST</option>
             </select>
           </div>
-
           <div className='filter-column'>
-            <label>Home Type</label>
-            <select>
-              {homeType.map((item, index) => <option key={index}>{item.property_type}</option>)}
+            <label htmlFor="">Home Type</label>
+            <select name="" id="">
+              <option value="">TEST</option>
             </select>
           </div>
-    
-        </form>
+        </div>
       </div>
 
       <div className='property-container'>
