@@ -21,37 +21,57 @@ function CityDetails() {
     const serverUrl = "https://unilife-server.herokuapp.com/properties/filter"  
 
     //2. I created the query object 
-    const query={
-      city_id: city_id,
-      bedroom_count: bedroomCount
-  }
+  //   const query={
+  //     city_id: city_id,
+  //     bedroom_count: bedroomCount
+  // }
 
     const handleBedroomFilter = (e) => {
       console.log(e.target.value)
       setBedroomCount(e.target.value)
       //3. I created the axios.post request with the serverUrl below and the query object. It appears that when the onChange event is triggered when I select the dropdown, the data appears to be the same but it is placed in a different order than what's posted on the page. Nonetheless, all the data is there.
-      axios.post(`${serverUrl}`,
-      {query})
-      .then(res => {
-        console.log(res.data)
-      })
-      .catch(err => console.log(err))
+      // axios.post(`${serverUrl}`,
+      // {query})
+      // .then(res => {
+      //   console.log(res.data)
+      // })
+      // .catch(err => console.log(err))
     }
 
 
+    //LEFT OFF HERE ON THE CODE BELOW
     useEffect(
       ()=>{
+        const query={
+          city_id: city_id,
+          bedroom_count: bedroomCount,
+          bathroom_count:1
+        }
+
+        axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})
+        .then(res =>{
+            console.log("filtering")
+            console.log(res.data.response)
+            setCard(res.data.response)
+            //when I set "setCard" to res.data.response, it filters the cards. Maybe I remove setCard from the data below
+        })
+        .catch(err => console.log(err))
+
+        //TEST ABOVE CODE
+        //The code above filters when I change the bedroom and bathroom count
+
         axios.get(`https://unilife-server.herokuapp.com/properties/city/${city_id}`)
         .then(res => {
         
           //store results in state using setCity
           setCity(res.data)
 
-          setCard(res.data.response)
+          // setCard(res.data.response)
           // console.log(res.data.response)
         })
         .catch(err => console.log(err))
-      }, []
+
+      }, [bedroomCount]
     )
 
 
