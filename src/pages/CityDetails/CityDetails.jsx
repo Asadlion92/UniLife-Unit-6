@@ -16,6 +16,8 @@ function CityDetails() {
 
     const [bedroomCount, setBedroomCount] = useState('1')
     const [bathroomCount, setBathroomCount] = useState('1')
+    const [maxPrice, setMaxPrice] = useState('')
+    const [homeType, setHomeType] = useState('')
 
 
     const handleBedroomFilter = (e) => {
@@ -29,6 +31,16 @@ function CityDetails() {
       setBathroomCount(e.target.value)
     }
 
+    const handleMaxPriceFilter = (e) => {
+      console.log(e.target.value)
+      setMaxPrice(e.target.value)
+    }
+
+    const handleHomeTypeFilter = (e) => {
+      console.log(e.target.value)
+      setHomeType(e.target.value)
+    }
+
     useEffect(
       ()=>{
 
@@ -37,8 +49,12 @@ function CityDetails() {
         const query={
           city_id: city_id,
           bedroom_count: bedroomCount, //Step 4: By placing the state "bedroomCount" here, the post request will filter from the selection from the dropdown. 
-          bathroom_count: bathroomCount
+          bathroom_count: bathroomCount,
+          rent: maxPrice,
+          property_type: homeType
         }
+
+        //Note that the object names such as city_id, bedroom_count, are the names from the API
 
         //Step 2: I create a post request using axios and query. From the console log, when there is a change in the bedroom_count, the filter will be displayed.
 
@@ -63,7 +79,7 @@ function CityDetails() {
         })
         .catch(err => console.log(err))
 
-      }, [bedroomCount, bathroomCount] //Step 5: Since we are using useEffect, bedroomCount is placed as a dependency so when there is a change in bedroomCount, the page will rerender
+      }, [bedroomCount, bathroomCount, maxPrice, homeType] //Step 5: Since we are using useEffect, bedroomCount is placed as a dependency so when there is a change in bedroomCount, the page will rerender
     )
 
 
@@ -80,6 +96,7 @@ function CityDetails() {
           <div className='filter-column'>
             <label htmlFor="">Min Bedroom</label>
             <select onChange={handleBedroomFilter}>
+              <option value="">Bedroom</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -92,6 +109,7 @@ function CityDetails() {
           <div className='filter-column'>
             <label htmlFor="">Min Bathroom</label>
             <select onChange={handleBathroomFilter}>
+              <option value="">Bathroom</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -99,14 +117,22 @@ function CityDetails() {
           </div>
           <div className='filter-column'>
             <label htmlFor="">Max Price</label>
-            <select name="" id="">
-              <option value="">TEST</option>
+            <select onChange={handleMaxPriceFilter}>
+              <option value="">Max Price</option>
+              <option value="1000">1000</option>
+              <option value="1500">1500</option>
+              <option value="2000">2000</option>
+              <option value="2500">2500</option>
+              <option value="3000">3000</option>
             </select>
           </div>
           <div className='filter-column'>
             <label htmlFor="">Home Type</label>
-            <select name="" id="">
-              <option value="">TEST</option>
+            <select onChange={handleHomeTypeFilter}>
+              <option value="">Home Type</option>
+              <option value="Detached">Detached</option>
+              <option value="Semi-Detached">Semi-Detached</option>
+              <option value="Apartment">Apartment</option>
             </select>
           </div>
         </div>
