@@ -6,7 +6,6 @@ import axios from 'axios'
 import PropertyCard from '../../components/PropertyCard/PropertyCard'
 import students from '../../assets/students-icon.png'
 
-//NOTES from 12/30/23: I need to figure out now how to filter the PropertyCard when the user selects the bedroom count dropdown
 
 function CityDetails() {
 
@@ -18,26 +17,23 @@ function CityDetails() {
     const [bathroomCount, setBathroomCount] = useState('1')
     const [maxPrice, setMaxPrice] = useState('')
     const [homeType, setHomeType] = useState('')
+    const [total, setTotal] = useState('')
 
 
     const handleBedroomFilter = (e) => {
-      console.log(e.target.value)
       setBedroomCount(e.target.value)
       //Step 3: I stored the bedroomCount from the selected values from the dropdown to state.
     }
 
     const handleBathroomFilter = (e) => {
-      console.log(e.target.value)
       setBathroomCount(e.target.value)
     }
 
     const handleMaxPriceFilter = (e) => {
-      console.log(e.target.value)
       setMaxPrice(e.target.value)
     }
 
     const handleHomeTypeFilter = (e) => {
-      console.log(e.target.value)
       setHomeType(e.target.value)
     }
 
@@ -60,8 +56,7 @@ function CityDetails() {
 
         axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})
         .then(res =>{
-            console.log("filtering")
-            console.log(res.data.response)
+            setTotal(res.data.count)
             setCard(res.data.response)
             //when I set "setCard" to res.data.response, it filters the cards.
             //The state "card" and "setCard" controls the PropertyCards that is being displayed on the screen. Also, the query and the post request filters the data when changing the bedroom_count info.
@@ -73,9 +68,6 @@ function CityDetails() {
         
           //store results in state using setCity
           setCity(res.data)
-
-          // setCard(res.data.response)
-          // console.log(res.data.response)
         })
         .catch(err => console.log(err))
 
@@ -139,7 +131,7 @@ function CityDetails() {
       </div>
 
       <div className='property-container'>
-        <h1>{`${city?.total} homes in ${city?.city_name}`}</h1>
+        <h1>{`${total} homes in ${city?.city_name}`}</h1>
         <div className='property-items-container'>
           {card?.map((item, index) =><PropertyCard key={index} property={item} />)}
         </div>

@@ -15,7 +15,6 @@ function HomeDetailsContent() {
         ()=>{
             axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
             .then(res => {
-                console.log(res.data)
                 setInfo(res.data)
                 setAddress(res.data.address)
 

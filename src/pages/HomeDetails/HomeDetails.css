@@ -16,6 +16,21 @@
     display: flex;
 }
 
+.back-btn {
+    margin: 15px 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3A5295;
+    color: white;
+}
+
+
+.home-details-container button:hover {
+    color: red;
+    cursor: pointer;
+}
+
 @media (max-width: 1000px) {
 
     .home-details-top-section {

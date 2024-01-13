@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './HomeDetails.css'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import HomeDetailsImg from '../../components/HomeDetailsImg/HomeDetailsImg'
 import HomeDetailsContent from '../../components/HomeDetailsContent/HomeDetailsContent'
 import HomeDetailsDescription from '../../components/HomeDetailsDescription/HomeDetailsDescription'
@@ -11,26 +12,31 @@ import HomeDetailsBedroomPrices from '../../components/HomeDetailsBedroomPrices/
 function HomeDetails() {
 
     const {property_id} = useParams()
-    const [details, setDetails] = useState('')
-    //HAVING AN ISSUE USING ARRAYS. WHEN THE PAGE RELOADS, IT CRASHES
-    //Solution, the API call was an Object not an array. I created another state to just capture the images array. Also, it might be wise to create a component for images, the information on the right and the bedroom prices 
 
-    // useEffect(
-    //     ()=>{
-    //         axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
-    //         .then(res => {
-    //             console.log(res.data)
-    //             //store data in state
-    //             setDetails(res.data)
-    //         })
-    //         .catch(err => console.log(err))
-    //     }, []
-    // )
+    const [backButton, setBackButton] = useState('')
+    const navigate = useNavigate()
+
+    const handleBackButton = () => {
+        navigate(`/cityDetails/${backButton}`)
+    }
+
+    useEffect(
+        ()=>{
+            axios.get(`https://unilife-server.herokuapp.com/properties/${property_id}`)
+            .then(res => {
+                //I was able to pull the original ID from the data, stored it into state and used useNavigate to navigate back to the previous page
+                setBackButton(res.data.city_id._id)
+
+            })
+            .catch(err => console.log(err))
+        }, []
+    )
+
         
 
   return (
     <div className='home-details-container'>
-        {/* <Link><h3>Back to Search</h3></Link> */}
+        <button className='back-btn' onClick={handleBackButton}>Back to Search</button>
 
         <div className="home-details-top-section">
             <HomeDetailsImg />
