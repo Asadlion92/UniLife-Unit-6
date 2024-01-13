@@ -15,50 +15,42 @@ function CityDetails() {
     const [card, setCard] = useState([])
 
     const [bedroomCount, setBedroomCount] = useState('1')
+    const [bathroomCount, setBathroomCount] = useState('1')
 
-    //Steps for getting the POST Request to work
-    //1. First I created the serverUrl for the backend
-    const serverUrl = "https://unilife-server.herokuapp.com/properties/filter"  
-
-    //2. I created the query object 
-  //   const query={
-  //     city_id: city_id,
-  //     bedroom_count: bedroomCount
-  // }
 
     const handleBedroomFilter = (e) => {
       console.log(e.target.value)
       setBedroomCount(e.target.value)
-      //3. I created the axios.post request with the serverUrl below and the query object. It appears that when the onChange event is triggered when I select the dropdown, the data appears to be the same but it is placed in a different order than what's posted on the page. Nonetheless, all the data is there.
-      // axios.post(`${serverUrl}`,
-      // {query})
-      // .then(res => {
-      //   console.log(res.data)
-      // })
-      // .catch(err => console.log(err))
+      //Step 3: I stored the bedroomCount from the selected values from the dropdown to state.
     }
 
+    const handleBathroomFilter = (e) => {
+      console.log(e.target.value)
+      setBathroomCount(e.target.value)
+    }
 
-    //LEFT OFF HERE ON THE CODE BELOW
     useEffect(
       ()=>{
+
+        //Steps for getting the POST request to work
+        //Step 1: I created a const variable name query which contains an object of data that needs to be used to filter "city_id, bedroom_count, bathroom_count" etc. 
         const query={
           city_id: city_id,
-          bedroom_count: bedroomCount,
-          bathroom_count:1
+          bedroom_count: bedroomCount, //Step 4: By placing the state "bedroomCount" here, the post request will filter from the selection from the dropdown. 
+          bathroom_count: bathroomCount
         }
+
+        //Step 2: I create a post request using axios and query. From the console log, when there is a change in the bedroom_count, the filter will be displayed.
 
         axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})
         .then(res =>{
             console.log("filtering")
             console.log(res.data.response)
             setCard(res.data.response)
-            //when I set "setCard" to res.data.response, it filters the cards. Maybe I remove setCard from the data below
+            //when I set "setCard" to res.data.response, it filters the cards.
+            //The state "card" and "setCard" controls the PropertyCards that is being displayed on the screen. Also, the query and the post request filters the data when changing the bedroom_count info.
         })
         .catch(err => console.log(err))
-
-        //TEST ABOVE CODE
-        //The code above filters when I change the bedroom and bathroom count
 
         axios.get(`https://unilife-server.herokuapp.com/properties/city/${city_id}`)
         .then(res => {
@@ -71,7 +63,7 @@ function CityDetails() {
         })
         .catch(err => console.log(err))
 
-      }, [bedroomCount]
+      }, [bedroomCount, bathroomCount] //Step 5: Since we are using useEffect, bedroomCount is placed as a dependency so when there is a change in bedroomCount, the page will rerender
     )
 
 
@@ -99,8 +91,10 @@ function CityDetails() {
           </div>
           <div className='filter-column'>
             <label htmlFor="">Min Bathroom</label>
-            <select name="" id="">
-              <option value="">TEST</option>
+            <select onChange={handleBathroomFilter}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
             </select>
           </div>
           <div className='filter-column'>
