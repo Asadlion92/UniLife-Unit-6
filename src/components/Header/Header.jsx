@@ -34,11 +34,6 @@ function Header() {
           <h3>UniLife</h3>
       </Link>
       <div className="right-content">
-        <div className="shortlist">
-          <AiOutlineHeart />
-          <p>Shortlist</p>
-        </div>
-
         <button className='contact-us' onClick={() => setIsOpen(true)}>
           <SlEnvolope />
           <p>Contact Us</p>

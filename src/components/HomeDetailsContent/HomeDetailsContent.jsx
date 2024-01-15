@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import {MdOutlineBed} from 'react-icons/md'
 import {MdOutlineBathtub} from 'react-icons/md'
+import Modal from 'react-modal'
 
 function HomeDetailsContent() {
 
@@ -22,6 +23,24 @@ function HomeDetailsContent() {
             .catch(err => console.log(err))
         }, []
     )
+
+      //Creating the Modal
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '25px'
+    },
+  };
+  
+  Modal.setAppElement('#root');
 
   return (
     <div className='home-details-content-container'>
@@ -90,7 +109,38 @@ function HomeDetailsContent() {
             </div>
         </div>
         <div className='home-details-container-btm-block'>
-            <button>Book Viewing</button>
+            <button onClick={() => setIsOpen(true)}>Book Viewing</button>
+            <Modal
+            isOpen={isOpen}
+            onRequestClose={() => setIsOpen(false)}
+            style={customStyles}
+            contentLabel="Booking Modal"
+            >
+                <div className='modal'>
+                    <div className='modal-content'>
+                        <h1>Book a Viewing</h1>
+                        <br />
+                        <h3>{`${address.street}, ${address.city}, ${address.postcode}`}</h3>
+                        <br />
+                        <form className='modal-form-container'>
+                            <div className='modal-left-content'>
+                            <label><h3>Name</h3></label><br />
+                            <input type='text' placeholder='Enter your name' required/><br />
+                            <label><h3>Email</h3></label><br />
+                            <input type='text' placeholder='Enter your email address' required/><br />
+                            <label><h3>Phone Number</h3></label><br />
+                            <input type='text' placeholder='Enter your phone number' required/><br />
+                            </div>
+                            <div className='modal-right-content'>
+                            <label><h3>Message</h3></label><br />
+                            <textarea placeholder='Enter your message' required></textarea><br />
+                            <input type='submit' />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </Modal>
         </div>
         
 
