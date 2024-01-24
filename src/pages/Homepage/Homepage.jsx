@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './Homepage.css'
+import './HomePage.css'
 import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
 import HomeForm from '../../components/HomeForm/HomeForm'
