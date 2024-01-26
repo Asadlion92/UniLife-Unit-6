@@ -7,7 +7,7 @@ import MidBanner from '../../components/MidBanner/MidBanner'
 import { Link } from 'react-router-dom'
 import FindHomes from '../../components/FindHomes/FindHomes'
 
-function Homepage() {
+function HomePage() {
 
   //Second, Store the results in state
   const [cities, setCities] = useState([])
@@ -52,4 +52,4 @@ function Homepage() {
   )
 }
 
-export default Homepage
+export default HomePage
